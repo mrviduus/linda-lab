@@ -1,0 +1,15 @@
+# Linda Lab
+
+Empty stage to work on Linda (Lekha's AnimateDiff clips, `../Linda/<clip>/*.png`). Unity 6 (6000.6.7f1), built-in RP, legacy Input.
+
+Open `linda-lab` in Unity, scene `Assets/Linda/Lab.unity`, press Play: A/D walk, J whip, H take a hit. Whip the bag, step in: on the way back it hits her in the back (hit_back); whipping a bag already flying at her ricochets.
+Animator `Assets/Linda/Anim/Linda.controller`: idle, walk, hit_whip, hit_back, rotate_left, rotate_right (24 fps).
+
+Pipeline (re-run when Lekha sends new clips):
+
+```sh
+/tmp/venv/bin/python Tools/make_linda_frames.py      # ../Linda -> Assets/Linda/Art (needs Pillow numpy scipy)
+UNITY=/Applications/Unity/Hub/Editor/6000.6.7f1/Unity.app/Contents/MacOS/Unity
+$UNITY -batchmode -quit -projectPath . -executeMethod LindaLab.Build       # or menu Linda/Build Lab
+$UNITY -batchmode -quit -projectPath . -executeMethod LindaLabShot.All     # Logs/lab_*.png
+```

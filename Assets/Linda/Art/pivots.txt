@@ -1,0 +1,6 @@
+hit_back 0.0560
+hit_whip 0.0358
+idle 0.0500
+rotate_left 0.0494
+rotate_right 0.0448
+walk 0.0497
