@@ -13,3 +13,7 @@ UNITY=/Applications/Unity/Hub/Editor/6000.6.7f1/Unity.app/Contents/MacOS/Unity
 $UNITY -batchmode -quit -projectPath . -executeMethod LindaLab.Build       # or menu Linda/Build Lab
 $UNITY -batchmode -quit -projectPath . -executeMethod LindaLabShot.All     # Logs/lab_*.png
 ```
+
+Play in the browser: https://mrviduus.github.io/linda-lab/
+
+Deploy: `$UNITY -batchmode -quit -projectPath . -buildTarget WebGL -executeMethod LindaLabBuild.WebGL`, then push `Build/WebGL` + `.nojekyll` as branch `gh-pages` (force, with `git -c http.postBuffer=524288000`).
