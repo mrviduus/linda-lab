@@ -32,6 +32,14 @@ public class LindaController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+    void OnGUI()   // lab readout
+    {
+        GUI.Label(new Rect(8, 8, 600, 24), string.Format("x {0:F2}  {1}  flipX {2}  knock {3:F2}   A/D walk  J whip  H hit",
+            transform.position.x, StateName, sr.flipX, knockLeft));
+    }
+
+    string StateName => Free ? (State.IsName("idle") ? "idle" : "walk") : State.IsName("hit_whip") ? "hit_whip" : State.IsName("hit_back") ? "hit_back" : "?";
+
     void Update()
     {
         if (knockLeft > 0)

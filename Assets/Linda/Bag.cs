@@ -22,6 +22,8 @@ public class Bag : MonoBehaviour
         linda = FindFirstObjectByType<LindaController>();
     }
 
+    void OnGUI() { GUI.Label(new Rect(8, 28, 400, 24), string.Format("bag theta {0:F2} omega {1:F2}", theta, omega)); }
+
     void Update()
     {
         var dt = Time.deltaTime;
